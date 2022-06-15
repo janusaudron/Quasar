@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration monitorInterval="20">
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d [%p][%-20X{UUID}][%c:%L] %m%n" />
+		</Console>
+
+		<RollingFile name="fileAppender" fileName="/home/opc/Quasar.log" filePattern="/home/opc/Quasar.log.%i">
+			<PatternLayout>
+				<Pattern>%d [%p][%-20X{UUID}][%c:%L] %m%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<OnStartupTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="50 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="5"/>
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+		<Root level="DEBUG">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="fileAppender" />
+		</Root>
+	</Loggers>
+</Configuration>

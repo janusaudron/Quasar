@@ -1,5 +1,7 @@
 # Quasar
 
+Es una aplicacion que consiste en dar la posicion y mensaje enviado por una nave de acuerdo a la información recibida por 3 satelites.
+
 Consta de 3 operaciones rest:
 
 ## Top Secret
